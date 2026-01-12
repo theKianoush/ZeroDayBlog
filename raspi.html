@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Zero-Day Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+
+/* Consistent, responsive blog images */
+.blog-figure {
+  max-width: 900px;       /* prevents desktop blowout */
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;        /* prevents edge clipping on laptops */
+  box-sizing: border-box;
+}
+
+.blog-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;       /* scales with viewport height */
+  display: block;
+  object-fit: contain;
+}
+    .blog-figure video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  display: block;
+}
+.blog-figure figcaption {
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+
+/* Code block styling */
+.code-block {
+	background: #1e1e1e;
+	color: #d4d4d4;
+	padding: 1.25rem;
+	border-radius: 6px;
+	overflow-x: auto;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	margin: 2rem 0;
+}
+
+.code-block code {
+	font-family: Consolas, Monaco, "Courier New", monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none; /* Reverts to original case */
+}
+h1, h2, h5 {
+  letter-spacing: -0.001em; /* Use a negative value to bring letters closer */
+}
+
+		</style>
+
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/target.png" alt="" /></span>
+						<span class="title">Zero-Day</span>
+					</a>
+				</div>
+<hr>
+			</header>
+
+			<!-- Main Content -->
+			<div id="main">
+				<div class="inner">
+
+					<section>
+
+						<article class="blog-post">
+
+  <h1>Building a Portable Virtualization &amp; Security Lab with Raspberry Pi and VMware ESXi</h1>
+<h5>By: Kian Ranjbar</h5>
+
+  <p>
+    I built a small, portable virtualization and security lab using a Raspberry Pi running VMware ESXi.
+    The goal was to create a hands-on environment where I could experiment with Linux, virtualization,
+    networking, and cybersecurity concepts in a controlled setting.
+  </p>
+
+  <h2>Project Overview</h2>
+
+  <p>
+    The foundation of this project was a Raspberry Pi configured to run VMware ESXi, effectively turning
+    it into a lightweight, portable virtual machine hub. This setup allowed me to deploy and manage
+    multiple virtual machines for learning, testing, and experimentation—essentially a compact home lab
+    that could be accessed remotely.
+  </p>
+
+  <figure class="blog-figure">
+    <img src="images/raspi/mylab.png" alt="">
+  </figure>
+
+  <h2>Linux &amp; Virtualization Experience</h2>
+
+  <p>
+    Through this project, I became comfortable working with multiple Linux distributions, with a strong
+    focus on:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Raspberry Pi OS (Raspbian)</strong> – My favorite overall due to its simplicity, stability,
+      and ease of use.
+    </li>
+    <li>
+      <strong>Kali Linux</strong> – Particularly valuable for its preinstalled offensive and defensive
+      security tools.
+    </li>
+  </ul>
+
+  <p>
+    Running these systems as virtual machines helped solidify my understanding of Linux internals,
+    package management, system services, and remote access.
+  </p>
+
+  <figure class="blog-figure">
+    <img src="images/raspi/linux.JPG" alt="">
+  </figure>
+
+  <h2>Security Tools &amp; Networking Concepts</h2>
+
+  <p>
+    I used this lab to explore practical cybersecurity tools and techniques, including:
+  </p>
+
+  <ul>
+    <li>Wireshark for network traffic monitoring and analysis</li>
+    <li>Nmap for reconnaissance and penetration testing</li>
+    <li>Nessus for vulnerability scanning</li>
+    <li>VPNs and Tor for understanding anonymity and IP obfuscation</li>
+    <li>ProxyChains to route traffic through multiple proxies</li>
+  </ul>
+
+  <p>
+    All testing was conducted in an isolated, ethical environment designed strictly for learning and
+    experimentation.
+  </p>
+
+  <h2>System Hardening &amp; Defensive Security</h2>
+
+  <p>
+    Beyond offensive tools, I focused heavily on system hardening and defensive practices:
+  </p>
+
+  <ul>
+    <li>SSH hardening (key-based authentication and non-standard ports)</li>
+    <li>PGP key usage for secure communication</li>
+    <li>Firewall configuration using UFW</li>
+    <li>Simulated DDoS scenarios to understand system behavior under stress</li>
+  </ul>
+
+  <p>
+    These exercises helped me better understand attack surfaces and the importance of layered security.
+  </p>
+
+  <figure class="blog-figure">
+    <img src="images/raspi/ddos.png" alt="">
+  </figure>
+
+  <h2>Web Development &amp; Backend Experimentation</h2>
+
+  <p>
+    I also used the lab to experiment with classic, bare-metal web development:
+  </p>
+
+  <ul>
+    <li>Built a simple car rental database interface using PHP</li>
+    <li>Designed and managed the backend with MySQL</li>
+    <li>Deployed the application using Apache as the web server</li>
+  </ul>
+
+  <p>
+    This reinforced full-stack fundamentals and demonstrated how application-level decisions interact
+    with system-level security.
+  </p>
+
+  <h2>Remote Access &amp; Usability</h2>
+
+  <p>
+    One of the most valuable aspects of the project was remote accessibility:
+  </p>
+
+  <ul>
+    <li>Secure SSH tunneling into the Raspberry Pi</li>
+    <li>VNC-based remote desktop access to virtual machine frontends</li>
+  </ul>
+
+  <p>
+    Being able to securely manage and interact with the lab from anywhere significantly enhanced its
+    practicality and reinforced real-world administration skills.
+  </p>
+
+  <figure class="blog-figure">
+    <video controls width="100%">
+      <source src="images/raspi/cmatrix.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption>Just messing around, here is a silly program I would love to leave running in the background. If any one walks in while this is runnning, they will assume you are a master hacker!</figcaption>
+  </figure>
+
+  <h2>Key Takeaways</h2>
+
+  <ul>
+    <li>Solidified Linux administration skills</li>
+    <li>Gained practical experience with virtualization on limited hardware</li>
+    <li>Applied cybersecurity concepts in a realistic environment</li>
+    <li>Practiced web development, software testing, and ethical hacking fundamentals</li>
+  </ul>
+
+  <p>
+    Overall, this Raspberry Pi ESXi lab became a versatile learning platform and one of the most
+    effective ways I’ve found to bridge theory with real-world technical execution.
+  </p>
+
+</article>
+
+<hr>
+
+
+					</section>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Zero-Day Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+
+/* Consistent, responsive blog images */
+.blog-figure {
+  max-width: 900px;       /* prevents desktop blowout */
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;        /* prevents edge clipping on laptops */
+  box-sizing: border-box;
+}
+
+.blog-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;       /* scales with viewport height */
+  display: block;
+  object-fit: contain;
+}
+    .blog-figure video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  display: block;
+}
+.blog-figure figcaption {
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+
+/* Code block styling */
+.code-block {
+	background: #1e1e1e;
+	color: #d4d4d4;
+	padding: 1.25rem;
+	border-radius: 6px;
+	overflow-x: auto;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	margin: 2rem 0;
+}
+
+.code-block code {
+	font-family: Consolas, Monaco, "Courier New", monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none; /* Reverts to original case */
+}
+h1, h2, h5 {
+  letter-spacing: -0.001em; /* Use a negative value to bring letters closer */
+}
+
+		</style>
+
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/target.png" alt="" /></span>
+						<span class="title">Zero-Day</span>
+					</a>
+				</div>
+<hr>
+			</header>
+
+			<!-- Main Content -->
+			<div id="main">
+				<div class="inner">
+
+					<section>
+
+						<article class="project-post">
+  <h1>Arduino Robotics: My First Exposure to Hardware and Programming</h1>
+<h5>By: Kian Ranjbar</h5>
+
+  <p>
+    This project was developed during the entire semseter of a robotics course, I took at the Univesrity of Colorado at Colorado Springs. Over the span of an entire semester, my lab partner and I worked together to design and build an Arduino-powered robot from the ground up.
+  </p>
+
+  <p>
+    Early in the course, we learned fundamental electrical and hardware concepts: how to wire a breadboard, interpret circuit schematics, connect sensors and motors, and program them using a simple embedded language. This was my first real exposure to hardware components and how they function at a practical level—wires, switches, power delivery, voltage, resistors, capacitors, and more.
+  </p>
+<!-- first pic -->
+  <figure class="blog-figure">
+    <img src="images/ard/pic1.jpg" alt="">
+  </figure>
+
+  <p>
+    More importantly, this class marked the first time in my life that I was introduced to programming—and I immediately fell in love with it. Not only was I constructing software that executed precisely according to my instructions, but I was also programming a real-world physical system that moved and interacted with reality based on my code. 
+  </p>
+<!-- pic2 -->
+  <figure class="blog-figure">
+    <img src="images/ard/pic2.jpg" alt="">
+  </figure>
+
+
+  <p>
+    The experience instilled a strong sense of personal accountability, as every mistake is traced back to the code or the hardware that you installed. The course also enforced punctuality and discipline, as my lab partner and I had to meet in the lab three mornings a week, on time, without exception.
+  </p>
+<!-- pic3 -->
+  <figure class="blog-figure">
+    <img src="images/ard/pic3.jpg" alt="">
+  </figure>
+                            
+  <p>
+    Throughout the semester, we worked hands-on with a wide range of components, even when they weren’t directly tied to the robot itself. For example, we used an LCD display as an interface to read temperature data from a sensor and display it in both Celsius and Fahrenheit. These smaller experiments reinforced how individual components could be composed into functional systems.
+  </p>
+                            
+<!-- pic4 -->
+  <figure class="blog-figure">
+    <img src="images/ard/pic4.jpg" alt="">
+  </figure>
+      <hr>
+                      
+  <h2>Robot Design</h2>
+  <figure class="blog-figure">
+    <img src="images/ard/pic5.jpg" alt="">
+  </figure>
+  <p>
+    The robot itself was simple but effective. We mounted motors on either side of a breadboard and attached wheels to them. A paper clip was used as a makeshift rear support, dragging along the surface to keep the “car” balanced. Steering was achieved by selectively powering one motor while keeping the other stationary, allowing the robot to pivot and turn.
+  </p>
+
+  <p>
+    A color sensor proved to be one of the most critical components. The robot’s task was to follow a track made of white tape laid across a large black table. Using sensor readings, we wrote logic to guide the robot along the tape. This was especially challenging on curves, but after extensive tuning and iteration, we achieved smooth and reliable navigation.
+  </p>
+
+  <p>
+    We later integrated an ultrasonic distance sensor to detect obstacles in front of the robot. When an object was detected, the program could branch into different behaviors—turning around, stopping, or changing direction. This added a layer of decision-making and autonomy to the system.
+  </p>
+<!-- cover pic -->
+  <figure class="blog-figure">
+    <img src="images/ard/coverArd.jpg" alt="">
+  </figure>
+  <h2>Reflection</h2>
+
+  <p>
+    One of the most exciting realizations from this project was how endlessly expandable it was. The robot could be continuously improved with additional sensors, better motor control, or structural upgrades. Even a simple improvement—such as replacing the paper clip with two additional motors and wheels—would turn it into a true four-wheel vehicle with significantly greater control.
+  </p>
+
+  <p>
+    This course laid the foundation for my interest in systems engineering, embedded programming, and the intersection between software and hardware. It remains one of the most impactful learning experiences of my academic career.
+  </p>
+</article>
+
+
+<hr>
+
+
+					</section>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
