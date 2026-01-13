@@ -5,176 +5,283 @@
 	Free for personal and commercial use under the CCA 3.0 license
 -->
 <html>
-<head>
-	<title>Zero-Day Blog</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<head>
+		<title>Zero-Day Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	<style>
-		.logo .title { font-size: 2rem; text-transform: none; }
-		.byline { text-transform: none; letter-spacing: normal; }
+		<!-- Custom styling -->
+		<style>
+			.logo .title {
+				font-size: 2.0rem;
+				text-transform: none; /* disables all-caps */
+			}
 
-		.tiles article a h2,
-		.tiles article a .content { opacity: 1 !important; display: block; }
+			.byline {
+				text-transform: none;   /* disables all caps */
+				letter-spacing: normal;
+			}
 
-		.tiles article:hover a h2,
-		.tiles article:hover a .content { display: none !important; }
+/* Keep the title and paragraph visible normally */
+			.tiles article a h2,
+			.tiles article a .content {
+				opacity: 1 !important;
+				display: block; /* normal display */
+			}
 
-		.tiles article a::before { background: rgba(0,0,0,0.35); }
+/* Hide text ONLY on hover */
+			.tiles article:hover a h2,
+			.tiles article:hover a .content {
+				display: none !important;
+			}
 
-		.tiles article .image {
-			height: 300px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
-		}
+/* Optional: keep overlay but semi-transparent */
+			.tiles article a::before {
+				background: rgba(0, 0, 0, 0.35); /* adjust darkness */
+			}
 
-		.tiles article .image img {
-			max-width: 100%;
-			max-height: 100%;
-			object-fit: contain;
-		}
+.tiles article .image {
+	height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    background: transparent;
+	overflow: hidden;
+}
 
-		.personal-link {
-			text-decoration: none;
-			color: #1e90ff;
-		}
+.tiles article .image img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
 
-		.personal-link:hover {
-			color: #ff7b00;
-			text-decoration: underline;
-		}
-	</style>
-</head>
 
-<body class="is-preload">
-<div id="wrapper">
+			.byline {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				text-transform: none;
+				letter-spacing: normal;
+				font-size: 1.1rem;
+			}
 
-<header id="header">
-	<div class="inner">
-		<a href="index.html" class="logo">
-			<span class="symbol"><img src="images/target.png" alt="" /></span>
-			<span class="title">Zero-Day</span>
-		</a>
-	</div>
-</header>
+			.personal-link {
+				text-decoration: none;
+				color: #1e90ff;
+				transition: color 0.2s ease;
+			}
 
-<div id="main">
-<div class="inner">
+			.personal-link:hover {
+				color: #ff7b00;
+				text-decoration: underline;
+			}
+.tiles article h2 {
+	text-transform: none !important;
+	letter-spacing: normal !important;
+}
 
-<header>
-	<h3 class="byline">
-		<span>By: Kian Ranjbar</span>
-		<a href="https://thekianoush.github.io/portfolio/" class="personal-link">Personal Website</a>
-	</h3>
-	<p>
-		A technical blog showcasing projects across Cybersecurity, Networking,
-		Data Science, Software Development, and Electrical Engineering.
-	</p>
-</header>
 
-<section class="tiles">
+		</style>
+	</head>
 
-	<article class="style1">
-		<span class="image"><img src="images/nsic.png" alt="" /></span>
-		<a href="nsic.html">
-			<h2>Research Experience with NSIC</h2>
-			<div class="content">
-				<p>National Space Intelligence Center</p>
-			</div>
-		</a>
-	</article>
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<div class="inner">
+
+					<!-- Logo -->
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/target.png" alt="" /></span>
+						<span class="title">Zero-Day</span>
+					</a>
+
+				</div>
+			</header>
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<header>
+						<h3 class="byline">
+							<span>By: Kian Ranjbar</span>
+	<a href="https://thekianoush.github.io/portfolio/" class="personal-link">Check out my Personal Website</a>
+						</h3>
+						<p>
+							This is a technical blog I designed to showcase some of my favorite projects I've completed. I also discuss my experiences with school, internships I've taken, and the certifications I've acquired. The subjects covered in this blog range from Cybersecurity, Networking, Data Science, and Software Development, all the way to Electrical Engineering.
+						</p>
+					</header>
+
+					<section class="tiles">
+                        
+
+
+
+
+									<article class="style1">
+							<span class="image"><img src="images/nsic.png" alt="" /></span>
+							<a href="nsic.html">
+								<h2>My Research Experience with NSIC</h2>
+								<div class="content">
+									<p>NSIC (National Space Intelligence Center formerly known as "Space Delta 18")</p>
+								</div>
+							</a>
+						</article>
+                        
+                        			<!-- 
+
+              		
+						<article class="style2">
+							<span class="image"><img src="images/8bit.jpg" alt="" /></span>
+							<a href="">
+								<h2>8-bit Computer</h2>
+								<div class="content">
+									<p>Hand built entirely using breadboards</p>
+								</div>
+							</a>
+						</article>
+
+					
+-->
 
 	<article class="style4">
-		<span class="image"><img src="images/pic02.png" alt="" /></span>
-		<a href="">
-			<h2>Outamation Data Analytics Extern</h2>
-			<div class="content">
-				<p>Processed 200-page document using AI/ML</p>
-			</div>
-		</a>
-	</article>
+							<span class="image"><img src="images/pic02.png" alt="" /></span>
+							<a href="">
+								<h2>Outamation Data Analytics Extern</h2>
+								<div class="content">
+									<p>Processed 200-page complex document using AI/ML</p>
+								</div>
+							</a>
+						</article>
+						
+						<article class="style3">
+							<span class="image"><img src="images/cnet/cnet.jpg" alt="" /></span>
+							<a href="cnet.html">
+								<h2>C Network Socket Programming</h2>
+								<div class="content">
+									<p>Distributed network protocol project</p>
+								</div>
+							</a>
+						</article>
 
-	<article class="style3">
-		<span class="image"><img src="images/cnet/cnet.jpg" alt="" /></span>
-		<a href="cnet.html">
-			<h2>C Network Socket Programming</h2>
-			<div class="content">
-				<p>Distributed network protocol project</p>
-			</div>
-		</a>
-	</article>
+			
 
-	<article class="style5">
-		<span class="image"><img src="images/ard/coverArd.jpg" alt="" /></span>
-		<a href="ard.html">
-			<h2>Arduino Car Robot</h2>
-			<div class="content">
-				<p>Real-time object avoidance robot</p>
+						<article class="style5">
+							<span class="image"><img src="images/ard/coverArd.jpg" alt="" /></span>
+							<a href="ard.html">
+								<h2>Arduino Car Robot</h2>
+								<div class="content">
+									<p>Real time object avoiding/ track sensing robot</p>
+								</div>
+							</a>
+						</article>
+                        
+                        
+			<article class="style6">
+							<span class="image"><img src="images/raspi/raspian.jpg" alt="" /></span>
+							<a href="raspi.html">
+								<h2>Raspberry Pi VMware ESXi</h2>
+								<div class="content">
+									<p>A small portable virtual machine hub/ hacking lab</p>
+								</div>
+							</a>
+						</article>
+                        
+						<article class="style8">
+							<span class="image"><img src="images/data/coverdata.jpeg" alt="" /></span>
+							<a href="data.html">
+								<h2>Data Analysis on Heart Disease</h2>
+								<div class="content">
+									<p>A statistical and data visualization project to identify key risk factors and preventative insights</p>
+								</div>
+							</a>
+						</article>
+                        
+                        						<article class="style7">
+							<span class="image"><img src="images/webapi/coverWeb.png" alt="" /></span>
+							<a href="webapi.html">
+								<h2>Web Messenger Application</h2>
+								<div class="content">
+									<p>A Google authenticated MERN stack messenger app I developed</p>
+								</div>
+							</a>
+						</article>
+                        
+                        						<article class="style9">
+							<span class="image"><img src="images/assembly/assembly.jpeg" alt="" /></span>
+							<a href="assembly.html">
+								<h2>Assembly language - Low-level Programming</h2>
+								<div class="content">
+									<p>A "simple" game of Hangman written in the meticulous language of assembly</p>
+								</div>
+							</a>
+						</article>
+                        
+                        						<article class="style6">
+							<span class="image"><img src="images/writing.png" alt="" /></span>
+							<a href="pron.html">
+								<h2>An Example of my Writing</h2>
+								<div class="content">
+									<p>A persuasive research paper I wrote, on the implications of pornography</p>
+								</div>
+							</a>
+						</article>
+					</section>
+				</div>
 			</div>
-		</a>
-	</article>
-
-	<article class="style6">
-		<span class="image"><img src="images/raspi/raspian.jpg" alt="" /></span>
-		<a href="raspi.html">
-			<h2>Raspberry Pi ESXi Lab</h2>
-			<div class="content">
-				<p>Portable virtualization & hacking lab</p>
-			</div>
-		</a>
-	</article>
-
-	<article class="style8">
-		<span class="image"><img src="images/data/coverdata.jpeg" alt="" /></span>
-		<a href="data.html">
-			<h2>Heart Disease Data Analysis</h2>
-			<div class="content">
-				<p>Statistical modeling & visualization</p>
-			</div>
-		</a>
-	</article>
-
-	<article class="style7">
-		<span class="image"><img src="images/webapi/coverWeb.png" alt="" /></span>
-		<a href="webapi.html">
-			<h2>Web Messenger App</h2>
-			<div class="content">
-				<p>Google-authenticated MERN stack app</p>
-			</div>
-		</a>
-	</article>
-
-	<article class="style9">
-		<span class="image"><img src="images/assembly/assembly.jpeg" alt="" /></span>
-		<a href="assembly.html">
-			<h2>Assembly Language Programming</h2>
-			<div class="content">
-				<p>Hangman game in assembly</p>
-			</div>
-		</a>
-	</article>
-
-</section>
-</div>
-</div>
 
 <footer id="footer">
-	<div class="inner">
-		<p>© Kian Ranjbar. All rights reserved.</p>
-	</div>
+    <div class="inner">
+        <section>
+            <h2>About Zero-Day</h2>
+            
+            <p>
+                I named this blog <em>Zero-Day</em> after the infamous <em>Zero-Day</em> exploit. It represents doing something I’ve never done before. While I have experience in web development from building several apps during my undergraduate studies, most of them never reached real users—and I had never created a blog. My goal with <em>Zero-Day</em> is to make this project practical: to showcase my work, allow recruiters to get to know me, and document my journey toward becoming an expert.
+            </p>
+
+            <p>
+                A <em>Zero-Day</em> exploit is one in which there have been zero days to prepare for it. It is a vulnerability or security hole in a computer system unknown to its developers or anyone capable of mitigating it.
+            </p>
+
+            <h3>Notable Examples of Zero-Day Exploits:</h3>
+
+            <ul>
+                <li><strong>Stuxnet (2010)</strong><br>
+                    Stuxnet is one of the most famous zero-day exploits. In 2010, it targeted Iran’s nuclear facilities. The malware exploited four zero-day vulnerabilities in Windows to disrupt uranium enrichment processes by manipulating industrial control systems.
+                </li>
+                <li><strong>Zoom (2020)</strong><br>
+                    In the early days of the pandemic, Zoom became a lifeline for remote work and communication. A zero-day exploit in Zoom’s software allowed attackers to access users’ devices, raising significant privacy and security concerns.
+                </li>
+                <li><strong>Log4Shell (2021)</strong><br>
+                    This zero-day vulnerability in the widely used Log4j library sent shockwaves through the tech world. Log4Shell allowed attackers to execute code remotely on affected systems, impacting thousands of organizations globally.
+                </li>
+                <li><strong>Google Chrome Zero-Day Vulnerabilities (2022)</strong><br>
+                    Google Chrome, one of the most popular web browsers, was targeted by multiple zero-day exploits in 2022. Although these vulnerabilities were quickly patched, they exposed users to risks ranging from data theft to complete system takeover.
+                </li>
+                <li><strong>Barracuda Networks Exploit (2023)</strong><br>
+                    This zero-day vulnerability affected Barracuda’s Email Security Gateway, allowing threat actors to install backdoors and execute arbitrary commands on affected systems. It was linked to Chinese state-sponsored groups, and attackers used this vulnerability to access sensitive data and exploit network security.
+                </li>
+            </ul>
+
+            <p>© Kian Ranjbar. All rights reserved.</p>
+        </section>
+    </div>
 </footer>
 
-</div>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+		</div>
 
-</body>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+
 </html>
