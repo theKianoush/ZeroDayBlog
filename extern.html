@@ -1,0 +1,1433 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Zero-Day Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+
+/* Consistent, responsive blog images */
+.blog-figure {
+  max-width: 900px;       /* prevents desktop blowout */
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;        /* prevents edge clipping on laptops */
+  box-sizing: border-box;
+}
+
+.blog-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;       /* scales with viewport height */
+  display: block;
+  object-fit: contain;
+}
+    .blog-figure video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  display: block;
+}
+.blog-figure figcaption {
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+
+/* Code block styling */
+.code-block {
+	background: #1e1e1e;
+	color: #d4d4d4;
+	padding: 1.25rem;
+	border-radius: 6px;
+	overflow-x: auto;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	margin: 2rem 0;
+}
+
+.code-block code {
+	font-family: Consolas, Monaco, "Courier New", monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none; /* Reverts to original case */
+}
+h1, h2, h5 {
+  letter-spacing: -0.001em; /* Use a negative value to bring letters closer */
+}
+
+		</style>
+
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/target.png" alt="" /></span>
+						<span class="title">Zero-Day</span>
+					</a>
+				</div>
+<hr>
+			</header>
+
+			<!-- Main Content -->
+			<div id="main">
+				<div class="inner">
+
+					<section>
+
+						<article class="blog-post">
+
+ 
+                  <body>
+
+<h1>Building an AI-Powered Research Assistant with Outamation</h1>
+                      
+                      
+            <figure class="blog-figure">
+    <img src="images/extern/1.png" alt="">
+  </figure>
+                      
+                      
+       
+                      
+                      
+                      
+<h5>By: Kian Ranjbar</h5>
+<p class="meta">
+Fall 2025 • AI / Machine Learning Externship • Document Intelligence & RAG Systems
+</p>
+
+<p>
+In October of 2025, I completed a Data Analytics, Artificial Intelligence, and Machine Learning externship with <strong>Outamation</strong>, a company focused on AI-powered document intelligence and workflow automation.
+</p>
+
+<p>
+Outamation develops systems that help businesses process large volumes of documents — including contracts, medical records, mortgage files, and customer requests — using artificial intelligence, OCR, and workflow automation technologies.
+</p>
+
+<p>
+Throughout the externship, I collaborated with a cohort of students under the guidance of industry mentors in weekly sessions where we reviewed progress, discussed architectural decisions, and refined our implementations together.
+</p>
+
+<div class="highlight">
+<strong>Project Goal:</strong><br>
+Design and develop an intelligent document analysis system capable of organizing messy documents, extracting information, and enabling conversational question-answering through Retrieval-Augmented Generation (RAG).
+</div>
+
+                                            
+            <figure class="blog-figure">
+    <img src="images/extern/complete.png" alt="">
+  </figure>
+                           
+                      
+<hr>
+
+<h2>The Problem</h2>
+
+<p>
+Modern document workflows are often chaotic and inefficient. Large PDF “blob” files may contain multiple unrelated documents merged together, scanned pages with poor formatting, handwritten text, and inconsistent structures.
+</p>
+
+<p>
+This becomes especially problematic in industries like healthcare, finance, and research, where users may need to quickly locate critical information buried across hundreds of pages.
+</p>
+
+<p>
+I focused my project around medical and research documents, where users often struggle to:
+</p>
+
+<ul>
+    <li>Organize large collections of studies and files</li>
+    <li>Understand dense technical information</li>
+    <li>Search across multiple documents efficiently</li>
+    <li>Ask contextual questions about the contents</li>
+</ul>
+
+<hr>
+
+<h2>My Solution</h2>
+
+<p>
+To solve this problem, I developed a complete AI-powered research assistant with a conversational chatbot interface built using <strong>Gradio</strong>.
+</p>
+        <figure class="blog-figure">
+    <img src="images/extern/chatbot.png" alt="">
+  </figure>
+<p>
+The system could:
+</p>
+
+<ul>
+    <li>Process both scanned and digital PDF documents</li>
+    <li>Perform OCR on low-quality scanned pages</li>
+    <li>Clean and chunk extracted text intelligently</li>
+    <li>Generate semantic embeddings for retrieval</li>
+    <li>Store vectors using FAISS</li>
+    <li>Retrieve relevant document sections using RAG</li>
+    <li>Answer user questions with contextual source grounding</li>
+</ul>
+
+<p>
+The end result was an interactive research assistant capable of turning disorganized documents into searchable, conversational knowledge.
+</p>
+
+<hr>
+
+<h2>System Architecture</h2>
+
+<p>
+The pipeline combined OCR, vector databases, semantic search, and local large language models into a unified retrieval system.
+</p>
+
+<div class="highlight">
+<strong>Pipeline Flow:</strong><br><br>
+
+   <figure class="blog-figure">
+    <img src="images/extern/architecture.png" alt="">
+  </figure>
+</div>
+
+<p>
+Key technologies used throughout the system included:
+</p>
+
+<ul>
+    <li><strong>Python</strong> for orchestration and backend logic</li>
+    <li><strong>Tesseract OCR</strong> for scanned document extraction</li>
+    <li><strong>Sentence Transformers</strong> for semantic embeddings</li>
+    <li><strong>FAISS</strong> for high-speed vector similarity search</li>
+    <li><strong>Mistral 7B Instruct</strong> running locally for inference</li>
+    <li><strong>LlamaIndex</strong> for chunking and retrieval tooling</li>
+    <li><strong>Gradio</strong> for the user interface</li>
+</ul>
+
+
+<hr>
+
+<h2>Challenges</h2>
+
+<p>
+The project introduced many real-world AI engineering challenges that are often overlooked in simplified tutorials.
+</p>
+
+<ul>
+    <li>OCR struggled with blurry scans, rotated pages, and inconsistent formatting</li>
+    <li>Large “blob” PDFs required intelligent document splitting and classification</li>
+    <li>Broad questions sometimes retrieved irrelevant chunks across multiple files</li>
+    <li>Context windows and compute limitations constrained model performance</li>
+</ul>
+
+<p>
+Addressing these issues required experimentation with chunking strategies, retrieval routing, metadata-aware filtering, and prompt engineering techniques.
+</p>
+
+<hr>
+
+<h2>What I Learned</h2>
+
+<p>
+This externship gave me hands-on experience building a complete end-to-end Retrieval-Augmented Generation pipeline from scratch.
+</p>
+
+<p>
+More importantly, it taught me that successful AI systems are not just about choosing a model — they depend heavily on data preprocessing, retrieval quality, architecture design, and user experience.
+</p>
+
+<p>
+I also gained practical experience working with:
+</p>
+
+<ul>
+    <li>Vector databases and semantic retrieval systems</li>
+    <li>OCR preprocessing pipelines</li>
+    <li>Prompt engineering and context grounding</li>
+    <li>Local LLM inference and optimization</li>
+    <li>System design trade-offs between speed, cost, and accuracy</li>
+</ul>
+
+                      
+                      <p>
+By the end of the externship, I had built a fully functional AI-powered research assistant capable of processing complex document collections and answering contextual questions through Retrieval-Augmented Generation.
+                          
+                             <h2>Project Presentation</h2>
+
+<div class="pdf-container">
+    <iframe 
+        src="assets/presentation.pdf" 
+        width="100%" 
+        height="700px"
+        style="border: 1px solid #ccc; border-radius: 10px;">
+    </iframe>
+</div>            
+</p>
+  
+        
+
+
+
+</body>          
+                 
+                        
+     <section style="margin-top: 60px; padding: 30px; border-top: 1px solid #ddd;">
+  
+  <h2>Special Thanks</h2>
+  <p style="max-width: 800px; line-height: 1.6;">
+    Special thanks to my guides for this project, whose leadership, insight, and technical expertise were instrumental in shaping this externship experience.
+  </p>
+
+  <!-- Nirmal Patel -->
+  <div style="display: flex; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+    
+    <div style="flex: 1; min-width: 250px;">
+      <h3>Nirmal Patel</h3>
+      <p><strong>Chief AI Officer, Outamation</strong></p>
+
+      <p style="line-height: 1.6;">
+        Nirmal is a technology leader with deep experience in AI, automation, and innovation. 
+        He has worked at companies like Magic Leap and BlackBerry, always pushing the limits of 
+        how AI can solve real-world problems.
+      </p>
+    </div>
+
+    <img src="images/extern/nirmal.png" alt="Nirmal Patel"
+         style="width: 180px; height: auto; border-radius: 12px; object-fit: cover;">
+  </div>
+
+  <!-- Lisa Guadagno -->
+  <div style="display: flex; align-items: center; gap: 20px; margin-top: 40px; flex-wrap: wrap;">
+    
+    <div style="flex: 1; min-width: 250px;">
+      <h3>Lisa Guadagno</h3>
+      <p><strong>Chief People Officer and Board Member, Outamation</strong></p>
+
+      <p style="line-height: 1.6;">
+        Lisa is a digital transformation expert who has led major change at companies like HSBC and Outamation. 
+        She specializes in connecting people, technology, and innovation to drive real business results.
+      </p>
+    </div>
+
+    <img src="images/extern/lisa.png" alt="Lisa Guadagno"
+         style="width: 180px; height: auto; border-radius: 12px; object-fit: cover;">
+  </div>
+
+         
+</section>                   
+                        
+                        
+                        
+                            
+ <footer style="margin-top: 60px; padding: 20px; border-top: 1px solid #ddd;">
+    <h2>🧠 Full Gradio RAG Chatbot Source Code</h2>
+     
+         <p>
+      Below is the complete implementation of the document intelligence system,
+      including OCR processing, document classification, vector search, RAG pipeline,
+      and Gradio UI.
+    </p>
+
+  <pre style="white-space: pre-wrap; word-wrap: break-word; background: #0f0f0f; color: #e6e6e6; padding: 20px; border-radius: 8px; overflow-x: auto; font-size: 12px; line-height: 1.4;">
+
+# Install required packages
+!pip install -q gradio
+!pip install -q gradio_pdf
+!pip install -q pypdf PyPDF2 pymupdf
+!pip install -q sentence-transformers transformers
+!pip install -q faiss-cpu
+!pip install -q numpy pandas
+ 
+# Install LlamaIndex packages for enhanced document processing
+!pip install -q llama-index
+!pip install -q llama-index-readers-file
+!pip install -q llama-index-embeddings-huggingface
+!pip install -q llama-index-vector-stores-faiss
+!pip install -q llama-index-llms-gemini
+ 
+# Install required libraries with CUDA support
+!pip install -q torch
+ 
+# Check CUDA version first
+!nvcc --version
+ 
+# Install llama-cpp-python with CUDA 12.x support
+!pip install --no-cache-dir llama-cpp-python==0.2.90 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu123
+!pip install llama-index
+ 
+!pip install --upgrade gradio
+ 
+import gradio as gr
+from gradio_pdf import PDF
+import fitz  # PyMuPDF
+from PyPDF2 import PdfReader
+import numpy as np
+from sentence_transformers import SentenceTransformer
+import faiss
+from typing import List, Dict, Tuple, Optional
+from dataclasses import dataclass
+import json
+from datetime import datetime
+import hashlib
+ 
+# LlamaIndex imports for enhanced document processing
+from llama_index.core import Document, VectorStoreIndex, StorageContext
+from llama_index.core.schema import TextNode
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.core.node_parser import SentenceSplitter
+from llama_index.core.vector_stores import MetadataFilters, MetadataFilter, FilterOperator
+ 
+# Configure Gemini (replace with your API key)
+ 
+# --- Open‑source Mistral‑7B via llama‑cpp‑python ---
+ 
+from llama_cpp import Llama
+import os
+ 
+# Path for the Mistral GGUF model
+MISTRAL_PATH = "/content/mistral.gguf"
+ 
+# Download once if not present (same as your working example)
+if not os.path.exists(MISTRAL_PATH):
+    !wget "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf" -O {MISTRAL_PATH}
+    print(f"Model downloaded to {MISTRAL_PATH}")
+ 
+if os.path.exists(MISTRAL_PATH):
+    print(f"Model file exists. Size: {os.path.getsize(MISTRAL_PATH) / (1024 * 1024):.2f} MB")
+else:
+    print("Model file not found!")
+ 
+# Load the model with GPU acceleration (same pattern you used before)
+mistral_llm = Llama(
+    model_path=MISTRAL_PATH,
+    n_gpu_layers=1,   # adjust if you have more VRAM
+    n_ctx=2048,
+    verbose=False,
+)
+
+
+
+
+# Initialize embedding models (both for compatibility)
+embed_model = SentenceTransformer("all-MiniLM-L6-v2")
+llama_embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+class SimpleLLMResponse:
+    """Tiny wrapper so we can call .text like Gemini."""
+    def __init__(self, text: str):
+        self.text = text
+ 
+def mistral_generate(prompt: str, max_tokens: int = 512, temperature: float = 0.3) -> SimpleLLMResponse:
+    """Gemini‑style wrapper around llama‑cpp Mistral."""
+    # Basic chat-style instruction format; you can tweak this for better behavior
+    full_prompt = (
+        "You are a helpful, concise assistant.\n"
+        "Answer exactly according to the instructions.\n\n"
+        f"{prompt}\n"
+    )
+ 
+    out = mistral_llm(
+        full_prompt,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        stop=["</s>"]
+    )
+ 
+    # llama‑cpp returns a dict; the text is here:
+    text = out["choices"][0]["text"]
+    return SimpleLLMResponse(text.strip())
+ 
+# --- Quick AI test ---
+prompt = "Hello AI, can you introduce yourself in one sentence?"
+response = mistral_generate(prompt, max_tokens=50)
+print("AI Response:", response.text)
+@dataclass
+class PageInfo:
+    """Stores information about a single page"""
+    page_num: int
+    text: str
+    doc_type: Optional[str] = None
+    page_in_doc: int = 0
+ 
+@dataclass
+class LogicalDocument:
+    """Represents a logical document within a PDF"""
+    doc_id: str
+    doc_type: str
+    page_start: int
+    page_end: int
+    text: str
+    chunks: List[Dict] = None
+ 
+@dataclass
+class ChunkMetadata:
+    """Rich metadata for each chunk"""
+    chunk_id: str
+    doc_id: str
+    doc_type: str
+    chunk_index: int
+    page_start: int
+    page_end: int
+    text: str
+    embedding: Optional[np.ndarray] = None
+def classify_document_type(text: str, max_length: int = 1500) -> str:
+    """
+    Classify the document type based on its content.
+    Uses LLM to intelligently identify document category.
+    """
+    # Truncate text if too long to avoid token limits
+    text_sample = text[:max_length] if len(text) > max_length else text
+ 
+    prompt = f"""
+    Analyze this document and classify it into ONE of these categories:
+    - Resume: CV, professional profile, work history
+    - Contract: Legal agreement, terms and conditions, service agreement
+    - Mortgage Contract: Home loan agreement, mortgage terms, property financing
+    - Invoice: Bill, payment request, financial statement
+    - Pay Slip: Salary statement, wage slip, earnings statement
+    - Lender Fee Sheet: Loan fees, lender charges, closing costs
+    - Land Deed: Property deed, title document, ownership certificate
+    - Bank Statement: Account statement, transaction history
+    - Tax Document: W2, 1099, tax return, tax form
+    - Insurance: Insurance policy, coverage document
+    - Report: Analysis, research document, findings
+    - Letter: Correspondence, memo, communication
+    - Form: Application, questionnaire, data entry form
+    - ID Document: Driver's license, passport, identification
+    - Medical: Medical report, prescription, health record
+    - Other: Doesn't fit other categories
+ 
+    Document sample:
+    {text_sample}
+ 
+    Respond with ONLY the category name, nothing else.
+    """
+ 
+    try:
+ 
+        response = mistral_generate(prompt, max_tokens=128, temperature=0.1)
+        doc_type = response.text.strip()
+ 
+        # Normalize the response
+        valid_types = [
+            'Resume', 'Contract', 'Mortgage Contract', 'Invoice', 'Pay Slip',
+            'Lender Fee Sheet', 'Land Deed', 'Bank Statement', 'Tax Document',
+            'Insurance', 'Report', 'Letter', 'Form', 'ID Document',
+            'Medical', 'Other'
+        ]
+ 
+        # Find best match (case-insensitive)
+        for valid_type in valid_types:
+            if doc_type.lower() == valid_type.lower():
+                return valid_type
+ 
+        return 'Other'
+    except Exception as e:
+        print(f"Classification error: {e}")
+        return 'Other'
+ 
+def detect_document_boundary(prev_text: str, curr_text: str,
+                            current_doc_type: str = None) -> bool:
+    """
+    Detect if two consecutive pages belong to the same document.
+    Returns True if they're from the same document.
+    """
+    # Quick heuristic checks first
+    if not prev_text or not curr_text:
+        return False
+ 
+    # Sample the texts for LLM analysis
+    prev_sample = prev_text[-500:] if len(prev_text) > 500 else prev_text
+    curr_sample = curr_text[:500] if len(curr_text) > 500 else curr_text
+ 
+    prompt = f"""
+    Determine if these two pages are from the SAME document.
+ 
+    Current document type: {current_doc_type or 'Unknown'}
+ 
+    End of Previous Page:
+    ...{prev_sample}
+ 
+    Start of Current Page:
+    {curr_sample}...
+ 
+    Consider:
+    - Continuity of content
+    - Formatting consistency
+    - Topic coherence
+    - Page numbers or headers
+ 
+    Answer ONLY 'Yes' if same document or 'No' if different document.
+    """
+ 
+    try:
+ 
+        response = mistral_generate(prompt, max_tokens=16, temperature=0.0)
+        return response.text.strip().lower().startswith("yes")
+ 
+    except Exception as e:
+        print(f"Boundary detection error: {e}")
+        # Default to keeping pages together if uncertain
+        return True
+def extract_and_analyze_pdf(pdf_file) -> Tuple[List[PageInfo], List[LogicalDocument]]:
+    """
+    Extract text from PDF and perform intelligent document analysis.
+    Returns both page-level info and logical document groupings.
+    Supports various file types including scanned PDFs with OCR.
+    """
+    print("📖 Starting PDF extraction and analysis...")
+ 
+    # Extract text from each page
+    if isinstance(pdf_file, dict) and "content" in pdf_file:
+        doc = fitz.open(stream=pdf_file["content"], filetype="pdf")
+    elif hasattr(pdf_file, "read"):
+        doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
+    else:
+        doc = fitz.open(pdf_file)
+ 
+    pages_info = []
+    for i, page in enumerate(doc):
+        text = page.get_text()
+ 
+        # If no text found, try OCR (for scanned documents)
+        if not text.strip():
+            print(f"  Page {i}: No text found, attempting OCR...")
+            try:
+                # Convert page to image and perform OCR
+                pix = page.get_pixmap()
+                img_data = pix.tobytes("png")
+                from PIL import Image
+                import pytesseract
+                import io
+ 
+                img = Image.open(io.BytesIO(img_data))
+                text = pytesseract.image_to_string(img)
+                print(f"  Page {i}: OCR extracted {len(text)} characters")
+            except Exception as e:
+                print(f"  Page {i}: OCR failed - {e}")
+                text = ""
+ 
+        pages_info.append(PageInfo(page_num=i, text=text))
+ 
+    doc.close()
+ 
+    if not pages_info:
+        raise ValueError("No text could be extracted from PDF")
+ 
+    print(f"✅ Extracted {len(pages_info)} pages")
+ 
+    # Perform document classification and boundary detection
+    print("🧠 Analyzing document structure...")
+    logical_docs = []
+    current_doc_type = None
+    current_doc_pages = []
+    doc_counter = 0
+ 
+    for i, page_info in enumerate(pages_info):
+        if i == 0:
+            # First page - classify document type
+            current_doc_type = classify_document_type(page_info.text)
+            page_info.doc_type = current_doc_type
+            page_info.page_in_doc = 0
+            current_doc_pages = [page_info]
+            print(f"  Page {i}: New document detected - {current_doc_type}")
+        else:
+            # Check if this page continues the previous document
+            prev_text = pages_info[i-1].text
+            is_same = detect_document_boundary(prev_text, page_info.text, current_doc_type)
+ 
+            if is_same:
+                # Continue current document
+                page_info.doc_type = current_doc_type
+                page_info.page_in_doc = len(current_doc_pages)
+                current_doc_pages.append(page_info)
+            else:
+                # New document detected - save previous and start new
+                logical_doc = LogicalDocument(
+                    doc_id=f"doc_{doc_counter}",
+                    doc_type=current_doc_type,
+                    page_start=current_doc_pages[0].page_num,
+                    page_end=current_doc_pages[-1].page_num,
+                    text="\n\n".join([p.text for p in current_doc_pages])
+                )
+                logical_docs.append(logical_doc)
+                doc_counter += 1
+ 
+                # Start new document
+                current_doc_type = classify_document_type(page_info.text)
+                page_info.doc_type = current_doc_type
+                page_info.page_in_doc = 0
+                current_doc_pages = [page_info]
+                print(f"  Page {i}: New document detected - {current_doc_type}")
+ 
+    # Don't forget the last document
+    if current_doc_pages:
+        logical_doc = LogicalDocument(
+            doc_id=f"doc_{doc_counter}",
+            doc_type=current_doc_type,
+            page_start=current_doc_pages[0].page_num,
+            page_end=current_doc_pages[-1].page_num,
+            text="\n\n".join([p.text for p in current_doc_pages])
+        )
+        logical_docs.append(logical_doc)
+ 
+    print(f"✅ Identified {len(logical_docs)} logical documents")
+    for ld in logical_docs:
+        print(f"   - {ld.doc_type}: Pages {ld.page_start}-{ld.page_end}")
+ 
+    return pages_info, logical_docs
+def chunk_document_with_metadata(logical_doc: LogicalDocument,
+                                chunk_size: int = 500,
+                                overlap: int = 100) -> List[ChunkMetadata]:
+    """
+    Chunk a logical document while preserving rich metadata.
+    Uses sliding window with overlap for better context.
+    """
+    chunks_metadata = []
+    words = logical_doc.text.split()
+ 
+    if len(words) <= chunk_size:
+        # Document is small enough to be a single chunk
+        chunk_meta = ChunkMetadata(
+            chunk_id=f"{logical_doc.doc_id}_chunk_0",
+            doc_id=logical_doc.doc_id,
+            doc_type=logical_doc.doc_type,
+            chunk_index=0,
+            page_start=logical_doc.page_start,
+            page_end=logical_doc.page_end,
+            text=logical_doc.text
+        )
+        chunks_metadata.append(chunk_meta)
+    else:
+        # Create overlapping chunks
+        stride = chunk_size - overlap
+        for i, start_idx in enumerate(range(0, len(words), stride)):
+            end_idx = min(start_idx + chunk_size, len(words))
+            chunk_text = ' '.join(words[start_idx:end_idx])
+ 
+            # Calculate which pages this chunk spans
+            # (simplified - in production, track more precisely)
+            chunk_position = start_idx / len(words)
+            page_range = logical_doc.page_end - logical_doc.page_start
+            relative_page = int(chunk_position * page_range)
+            chunk_page_start = logical_doc.page_start + relative_page
+            chunk_page_end = min(chunk_page_start + 1, logical_doc.page_end)
+ 
+            chunk_meta = ChunkMetadata(
+                chunk_id=f"{logical_doc.doc_id}_chunk_{i}",
+                doc_id=logical_doc.doc_id,
+                doc_type=logical_doc.doc_type,
+                chunk_index=i,
+                page_start=chunk_page_start,
+                page_end=chunk_page_end,
+                text=chunk_text
+            )
+            chunks_metadata.append(chunk_meta)
+ 
+            if end_idx >= len(words):
+                break
+ 
+    return chunks_metadata
+ 
+def chunk_with_llama_index(logical_doc: LogicalDocument,
+                           chunk_size: int = 500,
+                           chunk_overlap: int = 100) -> List[Document]:
+    """
+    Alternative: Use LlamaIndex's advanced chunking with metadata.
+    """
+    # Create LlamaIndex document with metadata
+    doc = Document(
+        text=logical_doc.text,
+        metadata={
+            "doc_id": logical_doc.doc_id,
+            "doc_type": logical_doc.doc_type,
+            "page_start": logical_doc.page_start,
+            "page_end": logical_doc.page_end,
+            "source": f"{logical_doc.doc_type}_document"
+        }
+    )
+ 
+    # Use LlamaIndex's sentence splitter for better chunking
+    splitter = SentenceSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
+        paragraph_separator="\n\n",
+        separator=" ",
+    )
+ 
+    # Create nodes (chunks) from document
+    nodes = splitter.get_nodes_from_documents([doc])
+ 
+    # Convert to our ChunkMetadata format for consistency
+    chunks_metadata = []
+    for i, node in enumerate(nodes):
+        chunk_meta = ChunkMetadata(
+            chunk_id=f"{logical_doc.doc_id}_chunk_{i}",
+            doc_id=logical_doc.doc_id,
+            doc_type=logical_doc.doc_type,
+            chunk_index=i,
+            page_start=node.metadata.get("page_start", logical_doc.page_start),
+            page_end=node.metadata.get("page_end", logical_doc.page_end),
+            text=node.text
+        )
+        chunks_metadata.append(chunk_meta)
+ 
+    return chunks_metadata
+ 
+def process_all_documents(logical_docs: List[LogicalDocument],
+                         use_llama_index: bool = False) -> List[ChunkMetadata]:
+    """
+    Process all logical documents into chunks with metadata.
+    Can use either custom or LlamaIndex chunking.
+    """
+    all_chunks = []
+ 
+    for logical_doc in logical_docs:
+        if use_llama_index:
+            chunks = chunk_with_llama_index(logical_doc)
+        else:
+            chunks = chunk_document_with_metadata(logical_doc)
+ 
+        logical_doc.chunks = chunks  # Store reference
+        all_chunks.extend(chunks)
+        print(f"📄 {logical_doc.doc_type}: Created {len(chunks)} chunks")
+ 
+    return all_chunks
+def predict_query_document_type(query: str) -> Tuple[str, float]:
+    """
+    Predict which document type is most likely to contain the answer.
+    Returns predicted type and confidence score.
+    """
+    prompt = f"""
+    Analyze this query and predict which document type would most likely contain the answer.
+ 
+    Query: "{query}"
+ 
+    Choose the MOST LIKELY type from:
+    - Resume: Career, experience, education, skills, employment history
+    - Contract: Terms, agreements, obligations, parties, legal terms
+    - Mortgage Contract: Home loan, property financing, mortgage terms, interest rates
+    - Invoice: Payments, amounts due, billing, charges, invoiced items
+    - Pay Slip: Salary, wages, deductions, earnings, pay period
+    - Lender Fee Sheet: Loan fees, closing costs, origination fees, lender charges
+    - Land Deed: Property ownership, deed information, property description, title
+    - Bank Statement: Account balance, transactions, deposits, withdrawals
+    - Tax Document: Tax information, W2, 1099, tax returns, tax amounts
+    - Insurance: Coverage, policy details, premiums, claims
+    - Report: Analysis, findings, conclusions, research data
+    - Letter: Communications, requests, notifications, correspondence
+    - Form: Applications, submitted data, form fields
+    - ID Document: Personal identification, ID numbers, identity verification
+    - Medical: Health information, medical conditions, prescriptions
+    - Other: General or unclear
+ 
+    Respond in JSON format:
+    {{"type": "DocumentType", "confidence": 0.85}}
+ 
+    Confidence should be between 0.0 and 1.0
+    """
+ 
+    response = mistral_generate(prompt, max_tokens=128, temperature=0.2)
+    raw = response.text.strip()
+ 
+# Mistral may sometimes wrap JSON in extra text; try to be robust:
+    try:
+    # If the model outputs something like ```json {...} ```, strip fences
+        if "```" in raw:
+            raw = raw.split("```")[-2]  # middle block
+        result = json.loads(raw)
+    except Exception:
+    # Very defensive fallback
+        result = {"type": "Other", "confidence": 0.0}
+ 
+    return result.get("type", "Other"), result.get("confidence", 0.5)
+ 
+class IntelligentRetriever:
+    """
+    Advanced retrieval system with metadata filtering and query routing.
+    """
+ 
+    def __init__(self):
+        self.index = None
+        self.chunks_metadata = []
+        self.doc_type_indices = {}  # Separate indices per doc type
+ 
+    def build_indices(self, chunks_metadata: List[ChunkMetadata]):
+        """
+        Build FAISS indices with document type segregation.
+        """
+        print("🔨 Building vector indices...")
+        self.chunks_metadata = chunks_metadata
+ 
+        # Create embeddings for all chunks
+        texts = [chunk.text for chunk in chunks_metadata]
+        embeddings = embed_model.encode(texts, show_progress_bar=True)
+ 
+        # Store embeddings in metadata
+        for i, chunk in enumerate(chunks_metadata):
+            chunk.embedding = embeddings[i]
+ 
+        # Build main index
+        dim = embeddings.shape[1]
+        self.index = faiss.IndexFlatL2(dim)
+        self.index.add(embeddings)
+ 
+        # Build separate indices for each document type
+        doc_types = set(chunk.doc_type for chunk in chunks_metadata)
+        for doc_type in doc_types:
+            type_indices = [i for i, chunk in enumerate(chunks_metadata)
+                          if chunk.doc_type == doc_type]
+            if type_indices:
+                type_embeddings = embeddings[type_indices]
+                type_index = faiss.IndexFlatL2(dim)
+                type_index.add(type_embeddings)
+                self.doc_type_indices[doc_type] = {
+                    'index': type_index,
+                    'mapping': type_indices  # Maps back to original chunks
+                }
+ 
+        print(f"✅ Indexed {len(chunks_metadata)} chunks across {len(doc_types)} document types")
+ 
+    def retrieve(self, query: str, k: int = 4,
+                filter_doc_type: Optional[str] = None,
+                auto_route: bool = True) -> List[Tuple[ChunkMetadata, float]]:
+        """
+        Retrieve relevant chunks with optional filtering and routing.
+        Returns chunks with relevance scores.
+        """
+        query_embedding = embed_model.encode([query])
+ 
+        # Determine which index to search
+        if filter_doc_type and filter_doc_type in self.doc_type_indices:
+            # Use filtered index
+            type_data = self.doc_type_indices[filter_doc_type]
+            D, I = type_data['index'].search(query_embedding, k)
+            # Map back to original chunks
+            chunk_indices = [type_data['mapping'][i] for i in I[0]]
+            distances = D[0]
+        elif auto_route:
+            # Predict best document type
+            predicted_type, confidence = predict_query_document_type(query)
+            print(f"🎯 Query routed to: {predicted_type} (confidence: {confidence:.2f})")
+ 
+            if confidence > 0.7 and predicted_type in self.doc_type_indices:
+                # High confidence - use specific index
+                type_data = self.doc_type_indices[predicted_type]
+                D, I = type_data['index'].search(query_embedding, k)
+                chunk_indices = [type_data['mapping'][i] for i in I[0]]
+                distances = D[0]
+            else:
+                # Low confidence - search all
+                D, I = self.index.search(query_embedding, k)
+                chunk_indices = I[0]
+                distances = D[0]
+        else:
+            # Search all chunks
+            D, I = self.index.search(query_embedding, k)
+            chunk_indices = I[0]
+            distances = D[0]
+ 
+        # Convert distances to similarity scores (inverse)
+        max_dist = max(distances) if len(distances) > 0 else 1.0
+        scores = [(max_dist - d) / max_dist for d in distances]
+ 
+        results = [(self.chunks_metadata[i], scores[idx])
+                  for idx, i in enumerate(chunk_indices)]
+ 
+        return results
+def generate_answer_with_sources(query: str,
+                                retrieved_chunks: List[Tuple[ChunkMetadata, float]]) -> Dict:
+    """
+    Generate answer with detailed source attribution.
+    """
+    if not retrieved_chunks:
+        return {
+            'answer': "I couldn't find relevant information to answer your question.",
+            'sources': [],
+            'confidence': 0.0
+        }
+ 
+    # Prepare context from retrieved chunks
+    context_parts = []
+    sources = []
+ 
+    for chunk_meta, score in retrieved_chunks:
+        context_parts.append(f"[From {chunk_meta.doc_type}, Pages {chunk_meta.page_start}-{chunk_meta.page_end}]")
+        context_parts.append(chunk_meta.text)
+        context_parts.append("")
+ 
+        sources.append({
+            'doc_type': chunk_meta.doc_type,
+            'pages': f"{chunk_meta.page_start}-{chunk_meta.page_end}",
+            'relevance': f"{score:.2%}",
+            'preview': chunk_meta.text[:100] + "..."
+        })
+ 
+    MAX_PROMPT_CHARS = 4000  # roughly fits 2048-token window
+ 
+    context = "\n".join(context_parts)
+    if len(context) > MAX_PROMPT_CHARS:
+    # keep only the last 4000 characters to stay within context
+        context = context[-MAX_PROMPT_CHARS:]
+ 
+    # Generate answer
+    prompt = f"""
+    You are a helpful AI assistant. Use the provided context to answer the question.
+    Be specific and cite which document type and pages support your answer.
+ 
+    Context:
+    {context}
+ 
+    Question: {query}
+ 
+    Instructions:
+    1. Answer based ONLY on the provided context
+    2. Mention which document type(s) contain the information
+    3. Be concise but complete
+    4. If the context doesn't contain enough information, say so
+ 
+    Answer:
+    """
+ 
+    try:
+ 
+        response = mistral_generate(prompt, max_tokens=512, temperature=0.2)
+        answer = response.text.strip()
+ 
+        # Calculate overall confidence based on retrieval scores
+        avg_score = sum(s for _, s in retrieved_chunks) / len(retrieved_chunks)
+ 
+        return {
+            'answer': answer,
+            'sources': sources,
+            'confidence': avg_score,
+            'chunks_used': len(retrieved_chunks)
+        }
+    except Exception as e:
+        print(f"Answer generation error: {e}")
+        return {
+            'answer': f"Error generating answer: {str(e)}",
+            'sources': sources,
+            'confidence': 0.0
+        }
+class EnhancedDocumentStore:
+    """
+    Manages the complete document processing and retrieval pipeline.
+    """
+ 
+    def __init__(self):
+        self.pages_info = []
+        self.logical_docs = []
+        self.chunks_metadata = []
+        self.retriever = IntelligentRetriever()
+        self.is_ready = False
+        self.processing_stats = {}
+        self.filename = None
+ 
+    def process_pdf(self, pdf_file, filename: str = "document.pdf"):
+        """
+        Complete PDF processing pipeline.
+        """
+        self.filename = filename
+        self.is_ready = False
+        start_time = datetime.now()
+ 
+        try:
+            # Extract and analyze PDF
+            self.pages_info, self.logical_docs = extract_and_analyze_pdf(pdf_file)
+ 
+            # Chunk documents with metadata
+            self.chunks_metadata = process_all_documents(self.logical_docs)
+ 
+            # Build retrieval indices
+            self.retriever.build_indices(self.chunks_metadata)
+ 
+            # Calculate processing statistics
+            process_time = (datetime.now() - start_time).total_seconds()
+            self.processing_stats = {
+                'filename': filename,
+                'total_pages': len(self.pages_info),
+                'documents_found': len(self.logical_docs),
+                'total_chunks': len(self.chunks_metadata),
+                'document_types': list(set(doc.doc_type for doc in self.logical_docs)),
+                'processing_time': f"{process_time:.1f}s"
+            }
+ 
+            self.is_ready = True
+            return True, self.processing_stats
+ 
+        except Exception as e:
+            return False, {'error': str(e)}
+ 
+    def query(self, question: str, filter_type: Optional[str] = None,
+             auto_route: bool = True, k: int = 4) -> Dict:
+        """
+        Query the document store.
+        """
+        if not self.is_ready:
+            return {
+                'answer': "Please upload and process a PDF first.",
+                'sources': [],
+                'confidence': 0.0
+            }
+ 
+        # Retrieve relevant chunks
+        retrieved = self.retriever.retrieve(
+            question, k=k,
+            filter_doc_type=filter_type,
+            auto_route=auto_route
+        )
+ 
+        # Generate answer with sources
+        result = generate_answer_with_sources(question, retrieved)
+        result['filter_used'] = filter_type or ('auto' if auto_route else 'none')
+ 
+        return result
+ 
+    def get_document_structure(self) -> List[Dict]:
+        """
+        Get the document structure for UI display.
+        """
+        if not self.logical_docs:
+            return []
+ 
+        structure = []
+        for doc in self.logical_docs:
+            structure.append({
+                'id': doc.doc_id,
+                'type': doc.doc_type,
+                'pages': f"{doc.page_start + 1}-{doc.page_end + 1}",  # 1-indexed for UI
+                'chunks': len(doc.chunks) if doc.chunks else 0,
+                'preview': doc.text[:200] + "..." if len(doc.text) > 200 else doc.text
+            })
+ 
+        return structure
+# Global store instance
+doc_store = EnhancedDocumentStore()
+ 
+def process_pdf_handler(pdf_file):
+    """Handle PDF upload and processing."""
+    if pdf_file is None:
+        return "⚠️ Please upload a PDF file", None, gr.update(choices=["All"])
+ 
+    # Process the PDF
+    success, stats = doc_store.process_pdf(pdf_file,
+                                          filename=getattr(pdf_file, 'name', 'document.pdf'))
+ 
+    if success:
+        # Prepare status message
+        status_msg = f"""
+        ✅ **Successfully Processed:**
+        - 📄 File: {stats['filename']}
+        - 📑 Pages: {stats['total_pages']}
+        - 📚 Documents Found: {stats['documents_found']}
+        - 🧩 Chunks Created: {stats['total_chunks']}
+        - 🏷️ Types: {', '.join(stats['document_types'])}
+        - ⏱️ Time: {stats['processing_time']}
+        """
+ 
+        # Get document structure for display
+        structure = doc_store.get_document_structure()
+        structure_display = "\n".join([
+            f"• **{doc['type']}** (Pages {doc['pages']}): {doc['chunks']} chunks"
+            for doc in structure
+        ])
+ 
+        # Update filter choices
+        doc_types = ["All"] + stats['document_types']
+ 
+        return status_msg, structure_display, gr.update(choices=doc_types, value="All")
+    else:
+        return f"❌ Error: {stats.get('error', 'Unknown error')}", None, gr.update(choices=["All"])
+ 
+def chat_handler(message, history, doc_filter, auto_route, num_chunks):
+    if not doc_store.is_ready:
+        response = "📚 Please upload and process a PDF document first."
+        return history + [{"role": "user", "content": message}, {"role": "assistant", "content": response}]
+ 
+    filter_type = None if doc_filter == "All" else doc_filter
+    result = doc_store.query(
+        message,
+        filter_type=filter_type,
+        auto_route=auto_route and filter_type is None,
+        k=num_chunks
+    )
+ 
+    response = f"{result['answer']}\n\n"
+    if result['sources']:
+        response += "📍 **Sources:**\n"
+        for src in result['sources']:
+            response += f"• {src['doc_type']} (Pages {src['pages']}) - Relevance: {src['relevance']}\n"
+    response += f"\n*Confidence: {result['confidence']:.1%} | Filter: {result['filter_used']}*"
+ 
+    return history + [
+        {"role": "user", "content": message},
+        {"role": "assistant", "content": response}
+    ]
+ 
+def create_interface():
+    """Create the enhanced Gradio interface with unified single-tab layout."""
+ 
+    with gr.Blocks(title="Enhanced Document Q&A", theme=gr.themes.Soft()) as demo:
+        gr.Markdown("""
+        # 🚀 Enhanced Document Q&A System
+        ### Intelligent Multi-Document Analysis with Advanced RAG Pipeline
+        """)
+ 
+        with gr.Row():
+            # Left side - PDF preview and upload
+            with gr.Column(scale=2):
+ 
+                # Replace this:
+# pdf_input = PDF(...)
+ 
+# With this:
+                pdf_input = gr.File(
+                    label="📄 Upload PDF",
+                    file_types=[".pdf"],
+                    interactive=True
+)
+ 
+                with gr.Row():
+                    process_btn = gr.Button(
+                        "🔄 Process Document",
+                        variant="primary",
+                        size="lg",
+                        scale=2
+                    )
+                    clear_all_btn = gr.Button(
+                        "🗑️ Clear All",
+                        variant="secondary",
+                        size="lg",
+                        scale=1
+                    )
+ 
+            # Middle - Document info and settings
+            with gr.Column(scale=1):
+                gr.Markdown("### 📊 Document Info")
+                status_output = gr.Markdown(
+                    value="⏳ Waiting for PDF upload..."
+                )
+ 
+                structure_output = gr.Markdown(
+                    value="",
+                    label="Document Structure"
+                )
+ 
+                gr.Markdown("### ⚙️ Settings")
+ 
+                doc_filter = gr.Dropdown(
+                    choices=["All"],
+                    value="All",
+                    label="🏷️ Document Type Filter",
+                    info="Filter search to specific document type"
+                )
+ 
+                auto_route = gr.Checkbox(
+                    value=True,
+                    label="🎯 Auto-Route Queries",
+                    info="Automatically detect relevant document type"
+                )
+ 
+                num_chunks = gr.Slider(
+                    minimum=1,
+                    maximum=10,
+                    value=4,
+                    step=1,
+                    label="📊 Chunks to Retrieve"
+                )
+ 
+            # Right side - Chat interface
+            with gr.Column(scale=2):
+                gr.Markdown("### 💬 Ask Questions")
+                chatbot = gr.Chatbot(
+                    label="Conversation",
+                    height=500,
+                    elem_id="chatbot",
+                    show_label=False
+                )
+ 
+                with gr.Row():
+                    msg_input = gr.Textbox(
+                        label="Ask a question",
+                        placeholder="e.g., What are the payment terms? What is the total amount?",
+                        scale=4,
+                        show_label=False
+                    )
+                    send_btn = gr.Button("📤 Send", scale=1, variant="primary")
+ 
+                with gr.Row():
+                    clear_chat_btn = gr.Button("🗑️ Clear Chat", size="sm", scale=1)
+                    example_btn1 = gr.Button("📝 What's the summary?", size="sm", scale=1)
+                    example_btn2 = gr.Button("💰 Find amounts", size="sm", scale=1)
+ 
+        # Status bar at the bottom
+        with gr.Row():
+            status_bar = gr.Markdown(
+                value="**Status:** Ready | **Documents:** 0 | **Chunks:** 0 | **Cache Hits:** 0/0",
+                elem_id="status_bar"
+            )
+ 
+        # Event handlers
+        def update_status_bar():
+            """Update the status bar with current statistics."""
+            if doc_store.is_ready:
+                stats = doc_store.processing_stats
+                cache_rate = 0
+                if hasattr(doc_store.retriever, 'total_queries') and doc_store.retriever.total_queries > 0:
+                    cache_rate = (doc_store.retriever.cache_hits / doc_store.retriever.total_queries) * 100
+ 
+                return f"**Status:** ✅ Ready | **Documents:** {stats.get('documents_found', 0)} | **Chunks:** {stats.get('total_chunks', 0)} | **Cache Rate:** {cache_rate:.0f}%"
+            return "**Status:** Ready | **Documents:** 0 | **Chunks:** 0 | **Cache Hits:** 0/0"
+ 
+        def clear_all():
+            """Clear everything and reset the interface."""
+            global doc_store
+            doc_store = EnhancedDocumentStore()
+            return (
+                None,  # pdf_input
+                "⏳ Waiting for PDF upload...",  # status_output
+                "",  # structure_output
+                gr.update(choices=["All"], value="All"),  # doc_filter
+                [],  # chatbot
+                "",  # msg_input
+                update_status_bar()  # status_bar
+            )
+ 
+        # Process PDF handler with status bar update
+        def process_pdf_with_status(pdf_file):
+            status, structure, filter_update = process_pdf_handler(pdf_file)
+            status_bar_text = update_status_bar()
+            return status, structure, filter_update, status_bar_text
+ 
+        # Chat handler with status bar update
+        def chat_with_status(message, history, doc_filter, auto_route, num_chunks):
+            new_history = chat_handler(message, history, doc_filter, auto_route, num_chunks)
+            status_bar_text = update_status_bar()
+            return new_history, status_bar_text
+ 
+        # Example question handlers
+        def ask_summary(history):
+            return chat_handler("Can you provide a summary of the main points in this document?",
+                              history, doc_filter.value, auto_route.value, num_chunks.value)
+ 
+        def ask_amounts(history):
+            return chat_handler("What are all the monetary amounts or financial figures mentioned?",
+                              history, doc_filter.value, auto_route.value, num_chunks.value)
+ 
+        # Wire up all the events
+        process_btn.click(
+            fn=process_pdf_with_status,
+            inputs=[pdf_input],
+            outputs=[status_output, structure_output, doc_filter, status_bar]
+        )
+ 
+        clear_all_btn.click(
+            fn=clear_all,
+            outputs=[pdf_input, status_output, structure_output, doc_filter,
+                    chatbot, msg_input, status_bar]
+        )
+ 
+        # Chat interactions
+        msg_input.submit(
+            fn=chat_with_status,
+            inputs=[msg_input, chatbot, doc_filter, auto_route, num_chunks],
+            outputs=[chatbot, status_bar]
+        ).then(
+            lambda: "",
+            outputs=[msg_input]
+        )
+ 
+        send_btn.click(
+            fn=chat_with_status,
+            inputs=[msg_input, chatbot, doc_filter, auto_route, num_chunks],
+            outputs=[chatbot, status_bar]
+        ).then(
+            lambda: "",
+            outputs=[msg_input]
+        )
+ 
+        clear_chat_btn.click(
+            lambda: [],
+            outputs=[chatbot]
+        )
+ 
+        example_btn1.click(
+            fn=ask_summary,
+            inputs=[chatbot],
+            outputs=[chatbot]
+        ).then(
+            fn=update_status_bar,
+            outputs=[status_bar]
+        )
+ 
+        example_btn2.click(
+            fn=ask_amounts,
+            inputs=[chatbot],
+            outputs=[chatbot]
+        ).then(
+            fn=update_status_bar,
+            outputs=[status_bar]
+        )
+ 
+        # Auto-process when PDF is uploaded
+        pdf_input.change(
+            fn=process_pdf_with_status,
+            inputs=[pdf_input],
+            outputs=[status_output, structure_output, doc_filter, status_bar]
+        )
+ 
+    return demo
+!pip install -q pytesseract pillow
+!apt-get update -qq && apt-get install -q -y tesseract-ocr
+ 
+# Fix Gradio PDF component
+import gradio as gr
+from gradio_pdf import PDF
+print("✅ Dependencies fixed")
+
+
+
+
+# Add this BEFORE create_interface()
+print("Loading Mistral model...")
+if not os.path.exists(MISTRAL_PATH):
+    !wget -q "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf" -O {MISTRAL_PATH}
+mistral_llm = Llama(model_path=MISTRAL_PATH, n_gpu_layers=1, n_ctx=2048, verbose=False)
+print("✅ Model ready")
+ 
+demo = create_interface()
+demo.launch(share=True, debug=True)
+ 
+
+
+
+  </pre>
+</footer>     
+                            
+                            
+
+</article>
+
+
+
+
+					</section>
+
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

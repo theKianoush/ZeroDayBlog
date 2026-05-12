@@ -85,180 +85,197 @@ h1, h2, h5 {
 					
     
                         <article class="project-post">
-  <header>
-    <h1>NSIC: Project Shoelace: Detecting GPS Signal Disruptions</h1>
-        <figure class="blog-figure">
-    <img src="images/nsic/projectshoelace.png" alt="">
+
+                          
+<body>
+
+<h1>Project Shoelace: Detecting GNSS Signal Anomalies with Machine Learning</h1>
+     <figure class="blog-figure">
+    <img src="images/nsic/1.png" alt="">
   </figure>
-         <div class="subtitle">
-    The Data Mine of the Rockies · NSIC (National Space Intelligence Center)
-  </div>
-      <h5>By: Kian Ranjbar</h5>
-      
-      
+<p class="meta">2026 • Data Science • Machine Learning • National Space Intelligence Center (NSIC)</p>
+
+<p>
+Over the course of 2026, I had the opportunity to work on a highly selective research project through 
+<strong>The Data Mine of the Rockies</strong> in collaboration with the 
+<strong>National Space Intelligence Center (NSIC)</strong> under the U.S. Space Force.
+</p>
+
+<p>
+Our project, titled <strong>“Project Shoelace: Tying Together Disparate Data Sources for Machine Learning-Based Anomaly Detection,”</strong> focused on one of the most critical and complex systems in the world: 
+<strong>Global Navigation Satellite Systems (GNSS)</strong>.
+</p>
+
+      <hr>
     
- </header>
-           
-                            <hr>
-
-                            <h2>What is NSIC?</h2>
-        <figure class="blog-figure">
-    <img src="images/nsic/NSIC.png" alt="">
+<h2>Why GNSS Matters</h2>
+         <figure class="blog-figure">
+    <img src="images/nsic/2.jpg" alt="">
   </figure>
-  <p>
-The <strong>National Space Intelligence Center (NSIC)</strong> is the U.S. Space Force’s
-    primary space intelligence organization. NSIC is designated as
-    <strong>Space Delta 18</strong> and serves as the Space Force’s dedicated intelligence
-    service center. NSIC is responsible
-    for producing space-related intelligence that supports national security, military
-    operations, and strategic decision-making. 
- </p>
+    
+<p>
+GNSS includes systems such as GPS (United States), GLONASS (Russia), Galileo (European Union), and BeiDou (China). 
+These satellite constellations provide positioning, navigation, and timing services that power everything from military operations to aviation and everyday navigation.
+</p>
 
+<p>
+Disruptions in GNSS signals are not trivial. They can:
+</p>
+<ul>
+    <li>Compromise military mission effectiveness</li>
+    <li>Introduce risks in air traffic navigation</li>
+    <li>Disrupt civilian infrastructure and time-sensitive systems</li>
+</ul>
 
-<h2>What is The Data Mine (DMR) of the Rockies?</h2>
-                                    <figure class="blog-figure">
-    <img src="images/nsic/TDM.png" alt="">
+<p>
+Given the scale and importance of GNSS, detecting anomalies quickly and accurately is a high-impact problem.
+</p>
+
+      <hr>
+    
+<h2>Project Objective</h2>
+<p>
+The core goal of Project Shoelace was to use <strong>machine learning and artificial intelligence</strong> to detect and predict anomalies in satellite signal data.
+</p>
+
+             <figure class="blog-figure">
+    <img src="images/nsic/3.png" alt="">
   </figure>
-  <p>
-    <strong>The Data Mine of the Rockies (DMR)</strong> is a collaborative data science initiative
-    designed to bridge academia, industry, and government by training college students through
-    hands-on, real-world data projects. Modeled after Purdue University’s nationally recognized
-    Data Mine and founded in partnership with <strong>Purdue University</strong> and the
-    <strong>University of Colorado Colorado Springs (UCCS)</strong>, DMR connects students from
-    all majors with defense, aerospace, technology, and other industry partners to solve
-    high-impact problems, build practical skills, and develop a workforce prepared for careers
-    in data science, AI, and analytics.
-  </p>
-                            
-                            <hr>
+<div class="highlight">
+<strong>Key Idea:</strong> Use global sensor data to automatically identify irregularities in GNSS signals and alert operators before those disruptions cause real-world consequences.
+</div>
 
-                            
-      <p>
-      At the beginning of 2026, I joined a research project through <strong>The Data Mine of the Rockies (TDM)</strong>,
-      where I am being deployed to work directly with the <strong>National Space Intelligence Center (NSIC)</strong>.
-      The project—<strong>Project Shoelace</strong>—focuses on detecting disruptions and anomalies in GPS and broader
-      GNSS (Global Navigation Satellite System) signals.
-    </p>
-    <p>
-      GPS is arguably the most monitored signal in the world. It is also one of the U.S. Space Force’s most expensive
-      and complex space systems. From military operations to commercial aviation to everyday navigation apps,
-      disruptions to GPS signals can have cascading real-world consequences.
-    </p>
-      
-      
-         <h2>The Problem: GPS Signal Anomalies</h2>
-    <p>
-      GPS and GNSS signals are consumed by a vast global network of sensors and receivers. These systems rely on GPS
-      for <strong>position, navigation, and timing (PNT)</strong>. When signals are degraded—whether due to interference,
-      jamming, spoofing, atmospheric effects, or hardware issues—the downstream impact can be severe.
-    </p>
-                            
-     
-    <p>
-      NSIC’s goal is to leverage these global sensor networks to:
-    </p>
-    <ul>
-      <li>Identify anomalous or degraded GPS/GNSS signals</li>
-      <li>Detect emerging disruptions as early as possible</li>
-      <li>Provide warnings to operators and end users</li>
-    </ul>
-      
-          <p>
-      The challenge is scale and complexity: massive data volume, many geographic locations, different formats,
-      varying sample rates, and inconsistent signal fidelity.
-    </p>
+    
+    <hr>
+<h2>What We Built</h2>
+<p>
+Our team developed a complete data science pipeline that:
+</p>
+<ul>
+    <li>Collected GNSS data from multiple global sources</li>
+    <li>Processed and standardized the data</li>
+    <li>Applied machine learning models to detect anomalies</li>
+</ul>
 
-      
-      
-      <h2>What I’ll Be Working On</h2>
-    <p>
-      My role on Project Shoelace sits at the intersection of data engineering, signal analysis, and applied AI.
-      Practically, my work can be summarized into a few core areas:
-    </p>
-
-    <h3>1. Working with High-Fidelity GPS Data</h3>
-    <p>
-      I will be analyzing data originating from extremely high-grade, proprietary satellite and sensor systems.
-      Much of this data is represented through metrics like <code>Carrier-to-Noise Density Ratio (C/N₀)</code>,
-      a key indicator of signal quality.
-    </p>
-                            
-                                      <figure class="blog-figure">
-    <img src="images/nsic/gnss.png" alt="">
+<h3>Data Integration</h3>
+    
+                <figure class="blog-figure">
+    <img src="images/nsic/4.png" alt="">
   </figure>
-                            
-    <p>
-      While the operational systems are highly sensitive, model development and experimentation will be performed
-      using <strong>publicly accessible GNSS datasets</strong>, allowing us to build, validate, and refine analytics
-      in a repeatable and verifiable way.
-    </p>
+<p>
+One of the biggest challenges was working with fragmented and heterogeneous datasets. 
+We integrated GNSS data from multiple providers including NASA CDDIS, UNAVCO, NOAA, IGN, and the Nevada Geodetic Laboratory.
+</p>
 
-      
-      <h3>2. Anomaly Detection with Machine Learning</h3>
-    <p>
-      A major focus of the project is refining and extending existing algorithms by incorporating
-      <strong>machine learning and AI-based approaches</strong>.
-    </p>
-                            
-                                                           <figure class="blog-figure">
-    <img src="images/nsic/anomaly.png" alt="">
+<p>
+To support this, we built a <strong>modular Python CLI tool</strong> that:
+</p>
+<ul>
+    <li>Automates GNSS data downloads</li>
+    <li>Handles decompression and formatting (RINEX)</li>
+    <li>Generates structured metadata (JSON manifests)</li>
+</ul>
+              <figure class="blog-figure">
+    <img src="images/nsic/4.2.png" alt="">
   </figure>
-    <ul>
-      <li>Training models on historical GNSS data to learn normal signal behavior</li>
-      <li>Detecting deviations that indicate anomalies or degraded signal regions</li>
-      <li>Reducing false positives while preserving sensitivity to real threats</li>
-    </ul>
-    <p>
-      These models are designed to scale and, eventually, support near real-time detection and alerting.
-    </p>
-      
-      
-       <h3>3. Scaling Big Data Storage and Processing</h3>
-    <p>
-      GPS data is not small. One part of the project involves identifying efficient strategies for:
-    </p>
-    <ul>
-      <li>Storing massive, multi-source datasets</li>
-      <li>Optimizing processing frequency and latency</li>
-      <li>Supporting long-term analytics without sacrificing performance</li>
-    </ul>
+    
+    
+    <hr>
+<h3>Machine Learning Models</h3>
+<p>
+We explored both unsupervised and supervised approaches:
+</p>
 
-    <h3>4. Automation, Visualization, and User Impact</h3>
-    <p>
-      Beyond raw detection, the project emphasizes usability. I’ll be contributing to efforts that:
-    </p>
-                                     <figure class="blog-figure">
-    <img src="images/nsic/satelitedata.png" alt="">
+<ul>
+    <li><strong>Unsupervised:</strong> Isolation Forest for exploratory anomaly detection</li>
+    <li><strong>Supervised:</strong> Random Forest, XGBoost, Logistic Regression, Neural Networks, and LightGBM</li>
+</ul>
+
+<p>
+After obtaining labeled data, we shifted toward supervised learning for better performance and interpretability.
+</p>
+
+<div class="highlight">
+<strong>Best Model Performance (XGBoost):</strong><br>
+    
+                   <figure class="blog-figure">
+    <img src="images/nsic/5.jpg" alt="">
   </figure>
-      
-      <ul>
-      <li>Automate anomaly identification and event classification</li>
-      <li>Improve data visualization and analytic interfaces</li>
-      <li>Support future capabilities like emitter localization reporting</li>
-    </ul>
-    <p>
-      The end goal is actionable intelligence—analytics that operators and analysts can trust and act on.
-    </p>
-      
-         <h2>Why This Matters</h2>
-    <p>
-      GPS disruptions are not an abstract problem. They can affect military missions, commercial air traffic,
-      critical infrastructure, autonomous vehicles, and even everyday users relying on navigation apps.
-    </p>
-    <p>
-      Project Shoelace sits squarely in the domain of <strong>information warfare and national security</strong>,
-      but its outcomes also have clear civilian and commercial relevance.
-    </p>
-    <p>
-      For me personally, this project represents hands-on experience applying data science and AI to
-      real-world, high-impact systems—working with complex data, real constraints, and problems that matter.
-    </p>
-      
-      
-  
+    
 
+</div>
+
+<h2>Key Results</h2>
+<p>
+The project successfully delivered a working prototype capable of detecting GNSS anomalies with over <strong>95% accuracy</strong> on test datasets.
+</p>
+            <figure class="blog-figure">
+    <img src="images/nsic/6.jpg" alt="">
+  </figure>
+    
+<p>
+More importantly, we demonstrated that machine learning can:
+</p>
+<ul>
+    <li>Automate a previously manual detection process</li>
+    <li>Improve reliability of satellite systems</li>
+    <li>Enable faster response to potential interference or tampering</li>
+</ul>
+
+    
+    <hr>
+<h2>Challenges</h2>
+<p>
+This project was far from trivial. Some of the main challenges included:
+</p>
+<ul>
+    <li>Limited availability of labeled data</li>
+    <li>Handling extremely large datasets</li>
+    <li>Integrating multiple inconsistent data sources</li>
+    <li>Navigating communication and bureaucratic constraints</li>
+</ul>
+
+<p>
+To overcome these, we implemented data optimization techniques, sourced data independently when necessary, and designed flexible tooling for ingestion and preprocessing.
+</p>
+
+
+
+<h2>Future Work</h2>
+<p>
+There is significant room to expand this project further:
+</p>
+<ul>
+    <li>Develop more advanced models (research-level approaches)</li>
+    <li>Build a real-time anomaly detection pipeline</li>
+    <li>Create dashboards for visualization and alerting</li>
+    <li>Expand data coverage across additional GNSS sources</li>
+</ul>
+<hr>
+<h2>Final Thoughts</h2>
+    
+            <figure class="blog-figure">
+    <img src="images/nsic/8.jpg" alt="">
+  </figure>
+
+<p>
+Project Shoelace was a deeply technical and impactful experience that combined data engineering, machine learning, and real-world problem solving.
+</p>
+
+<p>
+Working on a system tied to national infrastructure and space-based assets reinforced how critical reliable data systems are—and how powerful well-designed machine learning solutions can be when applied correctly.
+</p>
+
+<p>
+This project also pushed me to operate at a higher level: dealing with ambiguity, large-scale data, and real constraints that don’t exist in typical academic settings.
+</p>
+
+<p>
+Overall, it was one of the most valuable technical experiences I’ve had so far.
+</p>
+    
  
-</article>
+</body>
 
 
 <hr>
@@ -270,7 +287,9 @@ The <strong>National Space Intelligence Center (NSIC)</strong> is the U.S. Space
     </p>
   </footer>
 
-
+            <figure class="blog-figure">
+    <img src="images/nsic/9.png" alt="">
+  </figure>
 
 					</section>
 
